@@ -1,16 +1,36 @@
+// Write your algorithm here
+//1. Create function with two parameters (1-array of ints, 2-int)
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+//2. loop through array, summing current index with remaining indices producing sums for each pair
+  let sum = 0;  
+  for (let i = 0; i < array.length; i++){
+      for(let j = i + 1; j <= array.length; j++){
+        sum = array[i] + array[j];
+    //3. If sum of pair matches int parameter, return true
+        if (sum === target){
+          return true;
+          break;
+        } 
+      }
+  }
+  return false;
 }
+
+
 
 /* 
   Write the Big O time complexity of your function here
 */
-
+//Time-Complexity: Quadratic, O(n^2)
+//Space-Complexity: Linear, O(n)
 /* 
   Add your pseudocode here
-*/
-
-/*
+  /*
+  1. Create function with two parameters (1-array of ints, 2-int)
+  2. loop through array, summing current index with remaining indices producing sums for each pair
+  3. If sum of pair matches int parameter, return true
+  */
+ /*
   Add written explanation of your solution here
 */
 
